@@ -7,12 +7,27 @@
 </head>
 <body>
   <script>
-    console.log( "dsfsa".respond_to("?slice") )
-    console.log( 5..respond_to("?upto") );
+    var log = console.log;
     
-    console.log( [1, 2, 3].respond_to("?push") )
+    //log( "dsfsa".respond_to("?slice") )
+    //log( 5..respond_to("?upto") );
     
-    console.log( [1, 2, 3].respond_to("?hello") )
+    //log( [1, 2, 3].respond_to("?push") )
+    
+    //log( [1, 2, 3].respond_to("?hello") )
+    var x = [1,2,3];
+    var y = x.collect(function(x){
+      return Math.pow(x,2);
+    });
+    log(x) // [1, 2, 3]
+    log(y) // [1, 4, 9]
+    
+    var z = x.collect("!", function(x){
+      return Math.pow(x,2);
+    });
+    
+    log(x) // [1, 2, 3]
+    log(z) // [1, 4, 9]
   </script>
 </body>
 </html>
