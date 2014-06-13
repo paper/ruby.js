@@ -57,6 +57,28 @@ Number.prototype.downto = function(end, fn){
 
 /**
   //--------   ruby   --------
+  3.45.floor # Prints 3
+  -3.45.floor # Prints -4
+  
+  //--------javascript--------
+  (3.45).floor()  // 3
+  (-3.45).floor() // -4
+  
+  //如果是整数，得写2个点，也不能加括号
+  -2..floor()     // 3
+  2..floor()      // 2
+  
+  如果你写:  -3.45.floor() //-3 。 因为js会理解为：-(3.45.floor())
+  最佳实践是：
+  var x = -3.45  //or 3.45 ，2 等任何数字
+  x.floor()
+*/
+Number.prototype.floor = function(){
+  return Math.floor(this);
+};
+
+/**
+  //--------   ruby   --------
   [1, 2, 3].each { |x| puts x * 10 }
 
   //--------javascript--------
